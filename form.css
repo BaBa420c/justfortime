@@ -1,0 +1,577 @@
+.field-group {
+  margin-bottom: 5px;
+  padding: 3px 25px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.field-group h1 {
+  font-family: Verdana;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 7px;
+  border-bottom: 1px solid var(--color-secondary);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.field-group h1:after {
+  content: "\f107";
+  position: absolute;
+  font-family: FontAwesome;
+  right: 0;
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+.field-group h1.active:after {
+  content: "\f106";
+}
+
+.field-group h1 i {
+  margin-right: 10px;
+}
+
+.field-group h1 span {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  max-width: 250px;
+  padding: 4px 10px;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+}
+
+/* Select Dropdowns */
+select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 8px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 35px;
+}
+
+/* Inline Form Elements */
+.inline-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.inline-group label {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.inline-group input[type="text"],
+.inline-group input[type="password"],
+.inline-group select {
+  margin: 0;
+  flex: 1;
+  min-width: 120px;
+}
+
+/* Card Input Styling */
+.card-group {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.card-group input {
+  margin: 0;
+  max-width: none;
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  margin-left: 0;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  margin-bottom: 5px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.checkbox-group label {
+  margin: 0;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* Button Styling */
+.custom-btn {
+  padding: 7px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.save-btn {
+  background: var(--color-primary);
+  color: white;
+}
+
+.save-btn:hover {
+  background: #0a3d8a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3);
+}
+
+.clear-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.clear-btn:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.submit-btn,
+#settingsSaveBtn {
+  background: var(--color-secondary);
+  color: var(--primary-font-color);
+}
+
+.submit-btn:hover,
+#settingsSaveBtn:hover {
+  background: #3dd5f0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(69, 231, 250, 0.3);
+}
+
+/* Button Container */
+.button-container {
+  text-align: right;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .field-group {
+    padding: 20px;
+  }
+
+  .card-group {
+    grid-template-columns: 1fr;
+  }
+
+  .inline-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inline-group input,
+  .inline-group select {
+    width: 100%;
+    max-width: none;
+  }
+
+  .button-container {
+    text-align: center;
+  }
+
+  .custom-btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* Placeholder Styling */
+::placeholder {
+  color: #adb5bd;
+  opacity: 1;
+}
+
+/* Form Row */
+.form-row {
+  margin-bottom: 15px;
+}
+
+/* Special styling for password show/hide */
+.password-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.password-group input[type="password"],
+.password-group input[type="text"] {
+  flex: 1;
+  margin: 0;
+}
+
+.autocomplete {
+  display: inline;
+  align-items: center;
+}
+
+/* Date input styling */
+input[type="date"] {
+  width: auto;
+  max-width: 200px;
+  padding: 4px 10px;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+}
+
+/* Radio button styling */
+input[type="radio"] {
+  width: 14px;
+  height: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+input[type="radio"]:first-of-type {
+  margin-left: 0;
+}
+
+/* Radio button labels */
+input[type="radio"] + label {
+  margin-right: 15px;
+  margin-top: 0;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* Time input styling */
+input[size="4"] {
+  max-width: 100px;
+}
+
+/* Search button styling */
+button[id="search-trains-btn"] {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+  padding: 5px 16px !important;
+  border-radius: 6px !important;
+  border: none !important;
+  cursor: pointer !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  vertical-align: middle !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-left: 10px !important;
+}
+
+button[id="search-trains-btn"]:hover {
+  background-color: #0a3d8a !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3) !important;
+}
+
+/* Passenger details styling */
+.field-group input[id*="passenger-name"],
+.field-group input[id*="age-"] {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.field-group input[id*="age-"] {
+  max-width: 80px;
+}
+
+.field-group select[id*="passenger-gender"] {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  max-width: 120px;
+}
+
+/* Half seat checkbox styling */
+input[id*="passengerchildberth"] {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+input[id*="passengerchildberth"] + label {
+  margin-right: 15px;
+  font-weight: 400;
+}
+
+/* BR tag spacing fix */
+br {
+  line-height: 1.5;
+}
+
+/* Legend styling if present */
+legend {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+}
+
+.psg-detail {
+  padding-bottom: 0px;
+}
+
+.psg-detail:last-child {
+  border: 0;
+}
+
+.psg-detail label:nth-child(1) {
+  display: block;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-secondary);
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  max-width: fit-content;
+  font-size: 14px;
+}
+
+.psg-detail select,
+.psg-detail input {
+  width: auto;
+}
+
+.psg-detail .passenger-header {
+  display: none;
+}
+
+.passenger-inputs,
+.passenger-controls {
+  display: inline;
+}
+
+.passenger-controls .add-passenger-btn {
+  margin-right: 10px;
+}
+
+.passenger-controls i {
+  margin-right: 0;
+  font-size: 12px;
+}
+
+.password-field {
+  display: inline;
+  position: relative;
+}
+
+.password-field i {
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+
+.password-field input {
+  width: 100%;
+}
+
+/* Icon spacing */
+.registerbtn i,
+.custom-btn i,
+button i {
+  margin-right: 8px;
+}
+
+/* Register button base styling */
+.registerbtn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 8px 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.registerbtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.registerbtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Save button styling */
+#submit-btn,
+#disha-submit-btn,
+#settingsSaveBtn {
+  background: linear-gradient(135deg, #28a745, #20c997) !important;
+  color: white !important;
+  border: none;
+}
+
+#submit-btn:hover,
+#disha-submit-btn:hover,
+#settingsSaveBtn:hover {
+  background: linear-gradient(135deg, #218838, #1ea080) !important;
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4) !important;
+}
+
+/* Book button styling */
+#connect-btn,
+#disha-connect-btn,
+#settingsHomeBtn {
+  background: linear-gradient(135deg, #ff8c00, #ff6347) !important;
+  color: white !important;
+  border: none;
+}
+
+#connect-btn:hover,
+#disha-connect-btn:hover,
+#settingsHomeBtn:hover {
+  background: linear-gradient(135deg, #e67e00, #e5533d) !important;
+  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4) !important;
+}
+
+/* Website link button styling */
+a.websiteBtn {
+  background: linear-gradient(135deg, var(--color-primary), #1565c0) !important;
+  color: white !important;
+  text-decoration: none !important;
+  padding: 5px 20px;
+  margin: 0;
+}
+
+a.websiteBtn:hover {
+  background: linear-gradient(135deg, #0a3d8a, #0d47a1) !important;
+  box-shadow: 0 6px 20px rgba(13, 71, 161, 0.4) !important;
+}
+
+/* WhatsApp join button styling */
+a.whatsappBtn {
+  background: linear-gradient(135deg, #128c7e, #25d366) !important;
+  color: white !important;
+  text-decoration: none !important;
+  padding: 5px 20px;
+  margin: 0;
+}
+
+a.whatsappBtn:hover {
+  background: linear-gradient(135deg, #0f7269, #20b858) !important;
+  box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4) !important;
+}
+
+/* Download button styling */
+a.downloadBtn {
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #ff8c00, #ff6347) !important;
+  color: white;
+  padding: 12px 20px;
+  text-transform: none;
+  line-height: initial;
+  margin: 0;
+}
+
+a.downloadBtn:hover {
+  background: linear-gradient(135deg, #ff6347, #ff8c00) !important;
+  box-shadow: 0 6px 20px rgba(255, 99, 71, 0.4) !important;
+}
+
+.btn {
+  color: white;
+  text-decoration: none !important;
+  padding: 5px 10px;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none !important;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #128c7e, #25d366);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
